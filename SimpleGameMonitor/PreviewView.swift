@@ -74,7 +74,7 @@ struct PreviewView: NSViewRepresentable {
 //MARK: PreviewView.InternalView for iOS/iPadOS
 extension PreviewView {
     class InternalView: UIView {
-        typealias PreviewLayer = /*CALayer*/ AVCaptureVideoPreviewLayer
+        typealias PreviewLayer = AVCaptureVideoPreviewLayer
         
         var previewLayer: PreviewLayer? = nil
 
@@ -86,12 +86,6 @@ extension PreviewView {
         }
         override func layoutSubviews() {
             super.layoutSubviews()
-//            if PreviewLayer.self == CALayer.self {
-//                if previewLayer == nil {
-//                    previewLayer = CALayer()
-//                    previewLayer?.backgroundColor = UIColor.yellow.cgColor
-//                }
-//            }
             
             guard let previewLayer else {
                 return
