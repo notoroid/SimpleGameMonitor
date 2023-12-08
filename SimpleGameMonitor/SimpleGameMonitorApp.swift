@@ -11,6 +11,10 @@ import SwiftUI
 struct SimpleGameMonitorApp: App {
     let captureManager = CaptureManager()
     
+    #if os(macOS)
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    #endif
+    
     var body: some Scene {
         WindowGroup {
             ContentView(captureManager: captureManager)
